@@ -17,4 +17,6 @@ public class PlayerController : MonoBehaviour
         Vector3 translate = (new Vector3(h, 0, v) * Time.deltaTime) * Speed;
         transform.Translate(translate);
     }
+
+    
 }

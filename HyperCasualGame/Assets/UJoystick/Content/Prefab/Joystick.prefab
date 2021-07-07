@@ -204,7 +204,7 @@ MonoBehaviour:
   SmoothTime: 0.85
   OnPressScale: 1.2
   NormalColor: {r: 1, g: 1, b: 1, a: 1}
-  PressColor: {r: 0.065689884, g: 0.99264705, b: 0.7924658, a: 1}
+  PressColor: {r: 0.99215686, g: 0.75784826, b: 0.06666668, a: 1}
   Duration: 1
   StickRect: {fileID: 22449040}
   CenterReference: {fileID: 22496700}
