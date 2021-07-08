@@ -6,8 +6,8 @@ public class SpawnManager : MonoBehaviour
 {
     public GameObject[] carPrefabs;
     float[] carSpawnLocations = new float[] { 12.58f, 9.584f, 6.588f, 3.592f,0.596f,-2.4f };
-    private float startDelay = 2;
-    private float spawnDelay = 1.5f;
+    private float startDelay = 0.5f;
+    private float spawnDelay = 1f;
     // Start is called before the first frame update
     void Start()
     {
