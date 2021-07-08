@@ -5,7 +5,9 @@ using UnityEngine;
 public class LevelManager : MonoBehaviour
 {
     public PlayerController playerController;
- 
+    public GameObject foodPrefabs;
+
+    
 
     // Update is called once per frame
     void Update()
@@ -19,6 +21,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("You Failed");
             playerController.totalCarHitted = 0;
+            //GetComponent<BreakFruit>().Run(); //callBreakFoodAfter loosing
         }
     }
 }

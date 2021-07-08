@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             totalCarHitted++;
             //If the player get hit by car
-            Debug.Log("Car Hitted");
+            //Debug.Log("Car Hitted");
             //Decrase Size
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio, false);
 
@@ -56,7 +56,7 @@ public class PlayerController : MonoBehaviour
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);
             foodSpawner.SpawnRandomFood();
             Destroy(other.gameObject);
-            Debug.Log(totalFoodEaten);
+            //Debug.Log(totalFoodEaten);
         }
         
     }
