@@ -16,9 +16,9 @@ public class PlayerController : MonoBehaviour
     Vector3 newVector;
     FoodSpawner foodSpawner;
 
-     void Start()
+    void Start()
     {
-        foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>(); //(replace the curly brackets with the signs less than and greater than).
+        foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>(); 
     }
 
     // Update is called once per frame
@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
         {
             totalCarHitted++;
             //If the player get hit by car
-            //Debug.Log("Car Hitted");
+            Debug.Log("Car Hitted");
             //Decrase Size
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio, false);
 
@@ -51,6 +51,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            //gameObject.transform.Rotate(0,180,0);
             totalFoodEaten++;
             //Increase player size here
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);

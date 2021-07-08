@@ -29,11 +29,16 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     private float diff;
     private Vector3 PressScaleVector;
 
+
+    animationStateController animationStateController;
+
     /// <summary>
     /// 
     /// </summary>
     void Start()
     {
+        animationStateController = GameObject.FindGameObjectWithTag("Player").GetComponent<animationStateController>();
+
         if (StickRect == null)
         {
             Debug.LogError("Please add the stick for joystick work!.");
@@ -76,9 +81,12 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
     {
         DeathArea = CenterReference.position;
         //If this not free (not touched) then not need continue
-        if (!isFree)
+        if (!isFree) {
+          
             return;
+        }
 
+       
         //Return to default position with a smooth movement
         StickRect.position = Vector3.SmoothDamp(StickRect.position, DeathArea, ref currentVelocity, smoothTime);
         //When is in default position, we not need continue update this
@@ -86,6 +94,10 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
         {
             isFree = false;
             StickRect.position = DeathArea;
+            Debug.Log("You released the stick");
+            animationStateController.notwWalking();
+
+
         }
     }
 
@@ -107,6 +119,9 @@ public class bl_Joystick : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
             OnDrag(data);
             if (backImage != null)
             {
+                Debug.Log("You touched the stick");
+                animationStateController.walking();
+
                 backImage.CrossFadeColor(PressColor, Duration, true, true);
                 stickImage.CrossFadeColor(PressColor, Duration, true, true);
             }

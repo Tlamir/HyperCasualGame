@@ -10,7 +10,7 @@ public class CarController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.Translate(Vector3.left * speeds[Random.Range(0,speeds.Length)] * Time.deltaTime);
+        transform.Translate(Vector3.forward * speeds[Random.Range(0,speeds.Length)] * Time.deltaTime);
         if (transform.position.x < leftBound)
             Destroy(gameObject);
 
