@@ -1,0 +1,413 @@
+fileFormatVersion: 2
+guid: 23458a56a47b144179823b5e188eb3e9
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: Charakter_mesh.001
+    100002: foot.L
+    100004: foot.R
+    100006: forearm.L
+    100008: forearm.L.001
+    100010: forearm.L.001_end
+    100012: forearm.R
+    100014: forearm.R.001
+    100016: forearm.R.001_end
+    100018: metarig
+    100020: //RootNode
+    100022: shin.L
+    100024: shin.R
+    100026: shoulder.L
+    100028: shoulder.R
+    100030: spine
+    100032: spine.001
+    100034: spine.002
+    100036: spine.003
+    100038: spine.004
+    100040: spine.005
+    100042: spine.006
+    100044: spine.006_end
+    100046: thigh.L
+    100048: thigh.R
+    100050: toe.L
+    100052: toe.L_end
+    100054: toe.R
+    100056: toe.R_end
+    100058: upper_arm.L
+    100060: upper_arm.R
+    100062: Armature
+    100064: Armature.001
+    100066: Bone
+    100068: Bone 1
+    100070: Bone.001
+    100072: Bone.001 1
+    100074: Bone.002
+    100076: Bone.002 1
+    100078: Bone.003
+    100080: Bone.003 1
+    100082: Bone.004
+    100084: Bone.004 1
+    100086: Bone.005
+    100088: Bone.005 1
+    100090: Bone.005_end
+    100092: Bone.005_end 1
+    100094: Bone.006
+    100096: Bone.006 1
+    100098: Bone.007
+    100100: Bone.007 1
+    100102: Bone.008
+    100104: Bone.008 1
+    100106: Bone.009
+    100108: Bone.009 1
+    100110: Bone.009_end
+    100112: Bone.009_end 1
+    100114: Bone.010
+    100116: Bone.010 1
+    100118: Bone.011
+    100120: Bone.011 1
+    100122: Bone.012
+    100124: Bone.012 1
+    100126: Bone.013
+    100128: Bone.013 1
+    100130: Bone.013_end
+    100132: Bone.013_end 1
+    100134: Bone.014
+    100136: Bone.014 1
+    100138: Bone.015
+    100140: Bone.015 1
+    100142: Bone.016
+    100144: Bone.016 1
+    100146: Bone.017
+    100148: Bone.017 1
+    100150: Bone.017_end
+    100152: Bone.017_end 1
+    100154: Bone.018
+    100156: Bone.018 1
+    100158: Bone.019
+    100160: Bone.019 1
+    100162: Bone.020
+    100164: Bone.020 1
+    100166: Bone.021
+    100168: Bone.021 1
+    100170: Bone.021_end
+    100172: Bone.021_end 1
+    100174: Circle
+    100176: Circle.001
+    100178: Cone
+    100180: Cone.002
+    100182: Cube
+    100184: Cube.001
+    100186: Cube.002
+    100188: Cube.005
+    100190: Cube.007
+    100192: Cylinder
+    100194: Cylinder.001
+    100196: Cylinder.002
+    100198: Cylinder.003
+    100200: Cylinder.007
+    100202: Icosphere
+    100204: Icosphere.001
+    100206: Icosphere.003
+    100208: Plane
+    100210: Plane.001
+    100212: Sphere.002
+    100214: Sun
+    400000: Charakter_mesh.001
+    400002: foot.L
+    400004: foot.R
+    400006: forearm.L
+    400008: forearm.L.001
+    400010: forearm.L.001_end
+    400012: forearm.R
+    400014: forearm.R.001
+    400016: forearm.R.001_end
+    400018: metarig
+    400020: //RootNode
+    400022: shin.L
+    400024: shin.R
+    400026: shoulder.L
+    400028: shoulder.R
+    400030: spine
+    400032: spine.001
+    400034: spine.002
+    400036: spine.003
+    400038: spine.004
+    400040: spine.005
+    400042: spine.006
+    400044: spine.006_end
+    400046: thigh.L
+    400048: thigh.R
+    400050: toe.L
+    400052: toe.L_end
+    400054: toe.R
+    400056: toe.R_end
+    400058: upper_arm.L
+    400060: upper_arm.R
+    400062: Armature
+    400064: Armature.001
+    400066: Bone
+    400068: Bone 1
+    400070: Bone.001
+    400072: Bone.001 1
+    400074: Bone.002
+    400076: Bone.002 1
+    400078: Bone.003
+    400080: Bone.003 1
+    400082: Bone.004
+    400084: Bone.004 1
+    400086: Bone.005
+    400088: Bone.005 1
+    400090: Bone.005_end
+    400092: Bone.005_end 1
+    400094: Bone.006
+    400096: Bone.006 1
+    400098: Bone.007
+    400100: Bone.007 1
+    400102: Bone.008
+    400104: Bone.008 1
+    400106: Bone.009
+    400108: Bone.009 1
+    400110: Bone.009_end
+    400112: Bone.009_end 1
+    400114: Bone.010
+    400116: Bone.010 1
+    400118: Bone.011
+    400120: Bone.011 1
+    400122: Bone.012
+    400124: Bone.012 1
+    400126: Bone.013
+    400128: Bone.013 1
+    400130: Bone.013_end
+    400132: Bone.013_end 1
+    400134: Bone.014
+    400136: Bone.014 1
+    400138: Bone.015
+    400140: Bone.015 1
+    400142: Bone.016
+    400144: Bone.016 1
+    400146: Bone.017
+    400148: Bone.017 1
+    400150: Bone.017_end
+    400152: Bone.017_end 1
+    400154: Bone.018
+    400156: Bone.018 1
+    400158: Bone.019
+    400160: Bone.019 1
+    400162: Bone.020
+    400164: Bone.020 1
+    400166: Bone.021
+    400168: Bone.021 1
+    400170: Bone.021_end
+    400172: Bone.021_end 1
+    400174: Circle
+    400176: Circle.001
+    400178: Cone
+    400180: Cone.002
+    400182: Cube
+    400184: Cube.001
+    400186: Cube.002
+    400188: Cube.005
+    400190: Cube.007
+    400192: Cylinder
+    400194: Cylinder.001
+    400196: Cylinder.002
+    400198: Cylinder.003
+    400200: Cylinder.007
+    400202: Icosphere
+    400204: Icosphere.001
+    400206: Icosphere.003
+    400208: Plane
+    400210: Plane.001
+    400212: Sphere.002
+    400214: Sun
+    2100000: Hat_1
+    2100002: Hat_2
+    2100004: Skin
+    2100006: T-Shirt_2
+    2100008: T-Shirt
+    2100010: Hair
+    2100012: Troussers
+    2100014: Shoe
+    2100016: No Name
+    2100018: Bell
+    2100020: Reindeer
+    2100022: Saddle
+    2100024: Reindeer_light
+    2100026: Antler
+    2100028: Wood
+    2100030: Dark Leaves
+    2100032: Snow
+    2100034: Mud
+    2100036: Ice
+    2100038: Rocks
+    2100040: Karrot
+    2100042: Hut
+    2100044: Bell.001
+    2100046: Present_red
+    2100048: Present_blue
+    2100050: CandyCane_red
+    2100052: CandyCane_white
+    2100054: Sock
+    2100056: Present_brown
+    2100058: Star.001
+    2100060: Candle
+    2100062: Wick
+    2100064: Bauble_yellow
+    2100066: thread
+    2100068: Bauble_blue
+    2100070: Bauble_red
+    2100072: Present.001
+    2100074: Present_2.001
+    2100076: Wood.002
+    2100078: Dark Leaves.001
+    2100080: Snow.001
+    2100082: Star
+    2300000: Circle
+    2300002: Circle.001
+    2300004: Cone
+    2300006: Cone.002
+    2300008: Cube
+    2300010: Cube.001
+    2300012: Cube.002
+    2300014: Cube.005
+    2300016: Cube.007
+    2300018: Cylinder
+    2300020: Cylinder.001
+    2300022: Cylinder.002
+    2300024: Cylinder.003
+    2300026: Cylinder.007
+    2300028: Icosphere
+    2300030: Icosphere.001
+    2300032: Icosphere.003
+    2300034: Plane.001
+    2300036: Sphere.002
+    3300000: Circle
+    3300002: Circle.001
+    3300004: Cone
+    3300006: Cone.002
+    3300008: Cube
+    3300010: Cube.001
+    3300012: Cube.002
+    3300014: Cube.005
+    3300016: Cube.007
+    3300018: Cylinder
+    3300020: Cylinder.001
+    3300022: Cylinder.002
+    3300024: Cylinder.003
+    3300026: Cylinder.007
+    3300028: Icosphere
+    3300030: Icosphere.001
+    3300032: Icosphere.003
+    3300034: Plane.001
+    3300036: Sphere.002
+    4300000: Charakter_mesh.001
+    4300002: Cube.007
+    4300004: Sphere.002
+    4300006: Cylinder.003
+    4300008: Cone.002
+    4300010: Plane.001
+    4300012: Cone
+    4300014: Cylinder.002
+    4300016: Plane
+    4300018: Cylinder.001
+    4300020: Cube.005
+    4300022: Circle
+    4300024: Cylinder
+    4300026: Icosphere.003
+    4300028: Icosphere.001
+    4300030: Icosphere
+    4300032: Cube.002
+    4300034: Cube.001
+    4300036: Cube
+    4300038: Cylinder.007
+    4300040: Circle.001
+    9500000: //RootNode
+    10800000: Sun
+    13700000: Charakter_mesh.001
+    13700002: Plane
+    2186277476908879412: ImportLogs
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 0.01
+    hasPreviousCalculatedGlobalScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

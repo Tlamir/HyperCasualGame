@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Food
   - FoodSpawner
+  - Car
   layers:
   - Default
   - TransparentFX
