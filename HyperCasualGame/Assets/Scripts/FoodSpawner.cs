@@ -8,6 +8,8 @@ public class FoodSpawner : MonoBehaviour
     float foodSpawnLocationsTopRight = 5.0f;
     float foodSpawnLocationsTopLeft = -5.4f;
 
+    [SerializeField] GameObject player;
+
     float foodSpawnLocationsBottomRight = 3.0f;
     float foodSpawnLocationsBottomLeft = -3.0f;
 
@@ -17,7 +19,6 @@ public class FoodSpawner : MonoBehaviour
     void Start()
     {
         SpawnRandomFoodTop();
-
     }
     public void SpawnRandomFoodTop()
     {
@@ -30,5 +31,19 @@ public class FoodSpawner : MonoBehaviour
         Vector3 spawnPos = new Vector3(Random.Range(foodSpawnLocationsBottomLeft, foodSpawnLocationsBottomRight), 0.83f, -5f);
         int foodIndex = Random.Range(0, foodPrefabs.Length);
         Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation);
+    }
+
+    public void SpawnRandomFood()
+    {
+        if (player.transform.position.z > 12)
+        {
+            //Spawn in bottom
+            SpawnRandomFoodBottom();
+        }
+        else
+        {
+            //Spawn in top
+            SpawnRandomFoodTop();
+        }
     }
 }
