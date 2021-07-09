@@ -32,4 +32,13 @@ public class animationStateController : MonoBehaviour
         animator.SetBool("isFinished", true);
     }
 
+    public void startTurn()
+    {
+        animator.SetBool("isTurning", true);
+    }
+    public void endTurn()
+    {
+        animator.SetBool("isTurning", false);
+    }
+
 }
