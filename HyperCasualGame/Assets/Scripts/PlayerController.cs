@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float playerZincreaseRatio = 0.30f;
     public float minX = -3.2F, maxX = 3.34f;
     public int totalFoodEaten=0, totalCarHitted=0;
+   
 
     private SwerveInputSystem _swerveInputSystem;
     [SerializeField] private float swerveSpeed = 0.5f;
@@ -20,10 +21,12 @@ public class PlayerController : MonoBehaviour
 
     Vector3 newVector;
     FoodSpawner foodSpawner;
+    ProgressBar progressBar;
 
     void Start()
     {
         foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>();
+        progressBar = GameObject.FindGameObjectWithTag("ProgressBar").GetComponent<ProgressBar>();
         _swerveInputSystem = GetComponent<SwerveInputSystem>();
 
     }
@@ -62,6 +65,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            progressBar.IncrementProgress();
             gameObject.transform.Rotate(0,180,0);
             totalFoodEaten++;
             //Increase player size here

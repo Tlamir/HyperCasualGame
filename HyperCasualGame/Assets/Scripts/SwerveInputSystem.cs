@@ -6,7 +6,10 @@ public class SwerveInputSystem : MonoBehaviour
 {
     private float _lastFrameFingerPositionX;
     private float _moveFactorX;
+
+    
     public float MoveFactorX => _moveFactorX;
+    public float zPosMin = -4.68f, zPosMax = 14.9f;
     public PlayerController playerController;
     animationStateController animationStateController;
 
@@ -49,7 +52,7 @@ public class SwerveInputSystem : MonoBehaviour
         {
             Vector3 translate = (new Vector3(0, 0, 1) * Time.deltaTime) * Speed;
             transform.Translate(translate);
-            float zPosMin = -4.68f, zPosMax = 15.17f;
+            
             float zPos = Mathf.Clamp(transform.position.z, zPosMin, zPosMax);
 
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
