@@ -47,6 +47,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("You Failed");
             playerController.totalCarHitted = 0;
+            playerController.isLevelFinished = true;
             //GetComponent<BreakFruit>().Run(); //callBreakFoodAfter loosing
             FailedText.gameObject.SetActive(true);
             ReturnToMenuButton.gameObject.SetActive(true);
