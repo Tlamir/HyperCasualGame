@@ -4,32 +4,43 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] private bl_Joystick Joystick;//Joystick reference for assign in inspector
-    [SerializeField] private float Speed = 2.0f; //Player Speed
     //X Y Z values to manuplate player size 
     public float playerXincreaseRatio = 0.30f;
     public float playerYincreaseRatio = 0.001f;
     public float playerZincreaseRatio = 0.30f;
+    public float minX = -3.2F, maxX = 3.34f;
     public int totalFoodEaten=0, totalCarHitted=0;
-    
+
+    private SwerveInputSystem _swerveInputSystem;
+    [SerializeField] private float swerveSpeed = 0.5f;
+    [SerializeField] private float maxSwerveAmount = 1f;
+    public bool isLevelFinished = false;
+
+
 
     Vector3 newVector;
     FoodSpawner foodSpawner;
 
     void Start()
     {
-        foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>(); 
+        foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>();
+        _swerveInputSystem = GetComponent<SwerveInputSystem>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        float v = Joystick.Vertical; //get the vertical value of joystick
-        float h = Joystick.Horizontal;//get the horizontal value of joystick
+        if (!isLevelFinished)
+        {
+            float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
+            swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
+            transform.Translate(swerveAmount, 0, 0);
+        }
+        
+        //float xPos = Mathf.Clamp(transform.position.z, minX, minX);
 
+        //transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
 
-        Vector3 translate = (new Vector3(h, 0, v) * Time.deltaTime) * Speed;
-        transform.Translate(translate);
     }
 
 
@@ -39,8 +50,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Car")
         {
             totalCarHitted++;
-            //If the player get hit by car
-            Debug.Log("Car Hitted");
+            //If the player get hit by deer
             //Decrase Size
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio, false);
 
@@ -51,7 +61,7 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
-            //gameObject.transform.Rotate(0,180,0);
+            gameObject.transform.Rotate(0,180,0);
             totalFoodEaten++;
             //Increase player size here
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);
@@ -76,4 +86,6 @@ public class PlayerController : MonoBehaviour
         }
         
     }
+
+    
 }
