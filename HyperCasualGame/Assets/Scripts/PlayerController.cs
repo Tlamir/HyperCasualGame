@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     {
         foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>();
         _swerveInputSystem = GetComponent<SwerveInputSystem>();
+
     }
 
     // Update is called once per frame
