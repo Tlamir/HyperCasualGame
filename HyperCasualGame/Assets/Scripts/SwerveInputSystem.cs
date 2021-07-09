@@ -7,6 +7,7 @@ public class SwerveInputSystem : MonoBehaviour
     private float _lastFrameFingerPositionX;
     private float _moveFactorX;
     public float MoveFactorX => _moveFactorX;
+    public PlayerController playerController;
     animationStateController animationStateController;
 
     [SerializeField] private float Speed = 2.0f; //Player Speed
@@ -14,6 +15,7 @@ public class SwerveInputSystem : MonoBehaviour
     private void Start()
     {
         animationStateController = GameObject.FindGameObjectWithTag("Player").GetComponent<animationStateController>();
+        playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
 
     private void Update()
@@ -43,11 +45,15 @@ public class SwerveInputSystem : MonoBehaviour
 
     public void MovePlayer()
     {
-        Vector3 translate = (new Vector3(0, 0, 1) * Time.deltaTime) * Speed;
-        transform.Translate(translate);
-        float zPosMin =-4.68f, zPosMax = 15.17f;
-        float zPos = Mathf.Clamp(transform.position.z, zPosMin, zPosMax);
+        if (!playerController.isLevelFinished)
+        {
+            Vector3 translate = (new Vector3(0, 0, 1) * Time.deltaTime) * Speed;
+            transform.Translate(translate);
+            float zPosMin = -4.68f, zPosMax = 15.17f;
+            float zPos = Mathf.Clamp(transform.position.z, zPosMin, zPosMax);
 
-        transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+            transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
+        }
+        
     }
 }

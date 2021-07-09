@@ -14,6 +14,7 @@ public class PlayerController : MonoBehaviour
     private SwerveInputSystem _swerveInputSystem;
     [SerializeField] private float swerveSpeed = 0.5f;
     [SerializeField] private float maxSwerveAmount = 1f;
+    public bool isLevelFinished = false;
 
 
 
@@ -29,9 +30,13 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
-        swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
-        transform.Translate(swerveAmount, 0, 0);
+        if (!isLevelFinished)
+        {
+            float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
+            swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
+            transform.Translate(swerveAmount, 0, 0);
+        }
+        
         //float xPos = Mathf.Clamp(transform.position.z, minX, minX);
 
         //transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
@@ -45,8 +50,7 @@ public class PlayerController : MonoBehaviour
         if (other.gameObject.tag == "Car")
         {
             totalCarHitted++;
-            //If the player get hit by car
-            Debug.Log("Car Hitted");
+            //If the player get hit by deer
             //Decrase Size
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio, false);
 

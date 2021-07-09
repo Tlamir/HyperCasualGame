@@ -30,6 +30,7 @@ public class LevelManager : MonoBehaviour
             FailedText.gameObject.SetActive(true);
             ReturnToMenuButton.gameObject.SetActive(true);
             animationStateController.startDance();
+            playerController.isLevelFinished = true;
 
 
             try
