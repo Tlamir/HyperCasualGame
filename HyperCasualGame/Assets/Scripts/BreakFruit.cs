@@ -6,6 +6,14 @@ public class BreakFruit : MonoBehaviour
     public Transform parts;
     private Transform breakable = null;
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            Run();
+        }
+    }
+
     public void Run()
     {   
         if (breakable) return;
@@ -20,7 +28,7 @@ public class BreakFruit : MonoBehaviour
         {
             part.GetComponent<Rigidbody>().AddExplosionForce(200f, transform.position, 3.0f, 0.05f);
 
-            float time = Random.Range(5f, 30f);
+            float time = Random.Range(3f, 5f);
             Destroy(part.gameObject, time);
         }
 
