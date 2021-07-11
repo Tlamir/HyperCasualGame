@@ -10,13 +10,6 @@ public class animationStateController : MonoBehaviour
     {
         animator = GetComponent<Animator>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-       
-    }
-
     public void walking()
     {
         animator.SetBool("isWalking", true);

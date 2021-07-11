@@ -5,9 +5,21 @@ using UnityEngine.SceneManagement;
 
 public class GameMenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+    }
+
+    public void NextLevel()
+    {
+        try
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        }
+        catch (System.Exception)
+        {
+            Debug.LogError("Scene Cannot be Loaded");
+            
+        }
     }
 }
