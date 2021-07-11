@@ -52,9 +52,8 @@ public class SwerveInputSystem : MonoBehaviour
         {
             Vector3 translate = (new Vector3(0, 0, 1) * Time.deltaTime) * Speed;
             transform.Translate(translate);
-            
+            //    //Limit player movment in z axis
             float zPos = Mathf.Clamp(transform.position.z, zPosMin, zPosMax);
-
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
         
