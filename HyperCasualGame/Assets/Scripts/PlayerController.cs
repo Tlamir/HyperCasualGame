@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public int totalFoodEaten=0, totalCarHitted=0;
     private int inverseControls = 1;//1 not rotated -1 is rotated
    
+   
 
     private SwerveInputSystem _swerveInputSystem;
     [SerializeField] private float swerveSpeed = 0.5f;
@@ -38,7 +39,6 @@ public class PlayerController : MonoBehaviour
     {
         if (!isLevelFinished)
         {
-
             float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
             swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
             transform.Translate(swerveAmount*inverseControls, 0, 0);

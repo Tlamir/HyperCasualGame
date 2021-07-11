@@ -9,6 +9,7 @@ public class LevelManager : MonoBehaviour
     public PlayerController playerController;
     public Text FailedText;
     public Button ReturnToMenuButton;
+    public AudioSource playSound;
 
     animationStateController animationStateController;
 
@@ -45,6 +46,7 @@ public class LevelManager : MonoBehaviour
         }
         else if (playerController.totalFoodEaten-playerController.totalCarHitted<0)
         {
+            playSound.Play();
             Debug.Log("You Failed");
             playerController.totalCarHitted = 0;
             playerController.isLevelFinished = true;
