@@ -8,7 +8,7 @@ public class PlayerController : MonoBehaviour
     public float playerXincreaseRatio = 0.30f;
     public float playerYincreaseRatio = 0.001f;
     public float playerZincreaseRatio = 0.30f;
-    public float minX = -3.2F, maxX = 3.34f;
+    public float minX = -5.0f, maxX = 5.0f;
     public int totalFoodEaten=0, totalCarHitted=0;
    
 
@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float swerveSpeed = 0.5f;
     [SerializeField] private float maxSwerveAmount = 1f;
     public bool isLevelFinished = false;
+    
 
 
 
@@ -36,15 +37,14 @@ public class PlayerController : MonoBehaviour
     {
         if (!isLevelFinished)
         {
+
             float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
             swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
             transform.Translate(swerveAmount, 0, 0);
+            //Limit player movment in x axis
+            float xPos = Mathf.Clamp(transform.position.x, minX, maxX);
+            transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
         }
-        
-        //float xPos = Mathf.Clamp(transform.position.z, minX, minX);
-
-        //transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
-
     }
 
 
