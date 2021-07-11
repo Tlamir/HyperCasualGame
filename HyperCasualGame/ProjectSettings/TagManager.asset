@@ -8,6 +8,7 @@ TagManager:
   - FoodSpawner
   - Car
   - ProgressBar
+  - Arrow
   layers:
   - Default
   - TransparentFX

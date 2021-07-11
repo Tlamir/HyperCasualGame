@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SwerveInputSystem : MonoBehaviour
 {
@@ -12,8 +13,10 @@ public class SwerveInputSystem : MonoBehaviour
     public float zPosMin = -4.68f, zPosMax = 14.9f;
     public PlayerController playerController;
     animationStateController animationStateController;
+    
 
     [SerializeField] private float Speed = 2.0f; //Player Speed
+    public RawImage ArrowImage;
 
     private void Start()
     {
@@ -26,6 +29,7 @@ public class SwerveInputSystem : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             _lastFrameFingerPositionX = Input.mousePosition.x;
+            Destroy(ArrowImage); //Delete Arrow after play
         }
         else if (Input.GetMouseButton(0))
         {
