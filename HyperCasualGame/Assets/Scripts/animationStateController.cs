@@ -33,5 +33,4 @@ public class animationStateController : MonoBehaviour
     {
         animator.SetBool("isTurning", false);
     }
-
 }

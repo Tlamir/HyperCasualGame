@@ -8,13 +8,13 @@ public class PlayerController : MonoBehaviour
     public float playerXincreaseRatio = 0.30f;
     public float playerYincreaseRatio = 0.001f;
     public float playerZincreaseRatio = 0.30f;
-    public float minX = -5.0f, maxX = 5.0f;
+    
     public bool isLevelFinished = false;
     public int totalFoodEaten=0, totalCarHitted=0;
     public AudioSource eatingSound;
 
 
-
+    private float minX = -5.0f, maxX = 5.0f;
     private int inverseControls = 1;//1 not rotated -1 is rotated
     private SwerveInputSystem _swerveInputSystem;
     [SerializeField] 
@@ -88,18 +88,16 @@ public class PlayerController : MonoBehaviour
 
     public void ChangePlayerSize(float x,float y ,float z,bool IsItIncrease)
     {
-        if (IsItIncrease)
+        if (IsItIncrease)//Increase Player size
         {
             newVector = new Vector3(gameObject.transform.localScale.x + playerXincreaseRatio, gameObject.transform.localScale.y + playerYincreaseRatio, gameObject.transform.localScale.z + playerZincreaseRatio);
             gameObject.transform.localScale = newVector;
         }
-        else
+        else//Decrase Player size
         {
             newVector = new Vector3(gameObject.transform.localScale.x - playerXincreaseRatio, gameObject.transform.localScale.y - playerYincreaseRatio, gameObject.transform.localScale.z - playerZincreaseRatio);
             gameObject.transform.localScale = newVector;
         }
         
     }
-
-    
 }
