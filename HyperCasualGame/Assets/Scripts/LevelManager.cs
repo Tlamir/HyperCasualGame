@@ -8,11 +8,9 @@ public class LevelManager : MonoBehaviour
 {
     public PlayerController playerController;
     public Text FailedText;
-    public Text ScoreText;
     public Button ReturnToMenuButton;
     public Button NextLevelButton;
     public AudioSource playSound;
-    public int score=0;
 
     animationStateController animationStateController;
 
@@ -27,7 +25,6 @@ public class LevelManager : MonoBehaviour
         //Total food to finish level = levelNumber+2
         if (playerController.totalFoodEaten== SceneManager.GetActiveScene().buildIndex + 2)
         {
-            CalculateScore();
             playerController.totalFoodEaten = 0;
             FailedText.text="Succes";
             FailedText.color = Color.green;
@@ -39,19 +36,11 @@ public class LevelManager : MonoBehaviour
         }
         else if (playerController.totalFoodEaten-playerController.totalCarHitted<0) //Player looses
         {
-            CalculateScore();
             playSound.Play();
             playerController.totalCarHitted = 0;
             playerController.isLevelFinished = true;
             FailedText.gameObject.SetActive(true);
             ReturnToMenuButton.gameObject.SetActive(true);
         }
-    }
-    int CalculateScore()
-    {
-        score += (playerController.totalFoodEaten-playerController.totalCarHitted) * 150;
-        ScoreText.text = "Score:" + score;
-        ScoreText.gameObject.SetActive(true);
-        return score;
     }
 }

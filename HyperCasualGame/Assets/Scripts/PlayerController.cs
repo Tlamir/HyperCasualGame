@@ -9,15 +9,19 @@ public class PlayerController : MonoBehaviour
     public float playerYincreaseRatio = 0.001f;
     public float playerZincreaseRatio = 0.30f;
     public float minX = -5.0f, maxX = 5.0f;
-    public int totalFoodEaten=0, totalCarHitted=0;
-    private int inverseControls = 1;//1 not rotated -1 is rotated
-   
-   
-
-    private SwerveInputSystem _swerveInputSystem;
-    [SerializeField] private float swerveSpeed = 0.5f;
-    [SerializeField] private float maxSwerveAmount = 1f;
     public bool isLevelFinished = false;
+    public int totalFoodEaten=0, totalCarHitted=0;
+    public AudioSource eatingSound;
+
+
+
+    private int inverseControls = 1;//1 not rotated -1 is rotated
+    private SwerveInputSystem _swerveInputSystem;
+    [SerializeField] 
+    private float swerveSpeed = 0.5f;
+    [SerializeField] 
+    private float maxSwerveAmount = 1f;
+    
     
 
 
@@ -66,6 +70,8 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            //Play eatingAudio
+            eatingSound.Play();
             //Increase progress and rotate player
             progressBar.IncrementProgress();
             gameObject.transform.Rotate(0,180,0);
