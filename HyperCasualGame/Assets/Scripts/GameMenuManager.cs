@@ -20,7 +20,7 @@ public class GameMenuManager : MonoBehaviour
     {
         try
         {
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
         catch (System.Exception)
         {
