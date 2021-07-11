@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarController : MonoBehaviour
 {
     public float speed;
+    [SerializeField]
     public float[] speeds = { 1.0f, 2.3f, 5.0f,7.2f,3.1f,0.05f,9f};
     private float leftBound = -13.0f;
 

@@ -2,9 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameMenuManager : MonoBehaviour
 {
+    public Text LevelText;
+    void Start()
+    {
+        LevelText.text = "Level " + SceneManager.GetActiveScene().buildIndex.ToString();
+    }
     public void ReturnToMenu()
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
