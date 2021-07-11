@@ -56,6 +56,5 @@ public class SwerveInputSystem : MonoBehaviour
             float zPos = Mathf.Clamp(transform.position.z, zPosMin, zPosMax);
             transform.position = new Vector3(transform.position.x, transform.position.y, zPos);
         }
-        
     }
 }

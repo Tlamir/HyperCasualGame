@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     public float playerZincreaseRatio = 0.30f;
     public float minX = -5.0f, maxX = 5.0f;
     public int totalFoodEaten=0, totalCarHitted=0;
+    private int inverseControls = 1;//1 not rotated -1 is rotated
    
 
     private SwerveInputSystem _swerveInputSystem;
@@ -40,7 +41,7 @@ public class PlayerController : MonoBehaviour
 
             float swerveAmount = Time.deltaTime * swerveSpeed * _swerveInputSystem.MoveFactorX;
             swerveAmount = Mathf.Clamp(swerveAmount, -maxSwerveAmount, maxSwerveAmount);
-            transform.Translate(swerveAmount, 0, 0);
+            transform.Translate(swerveAmount*inverseControls, 0, 0);
             //Limit player movment in x axis
             float xPos = Mathf.Clamp(transform.position.x, minX, maxX);
             transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
@@ -65,14 +66,16 @@ public class PlayerController : MonoBehaviour
     {
         if (other.CompareTag("Food"))
         {
+            //Increase progress and rotate player
             progressBar.IncrementProgress();
             gameObject.transform.Rotate(0,180,0);
+            //swap movment
+            inverseControls *= -1;
             totalFoodEaten++;
             //Increase player size here
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);
             foodSpawner.SpawnRandomFood();
             Destroy(other.gameObject);
-            //Debug.Log(totalFoodEaten);
         }
         
     }
