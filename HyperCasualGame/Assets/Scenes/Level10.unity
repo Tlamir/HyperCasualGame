@@ -172,7 +172,7 @@ MonoBehaviour:
   - {fileID: 6514234992778094735, guid: 1c63fd3fac1ddea43b05cf725bd72bad, type: 3}
   - {fileID: 4365026001399561642, guid: 798019eae0a8b674592a4c161e984cde, type: 3}
   startDelay: 0.5
-  spawnDelay: 2
+  spawnDelay: 0.5
 --- !u!4 &60252088
 Transform:
   m_ObjectHideFlags: 0
@@ -2829,12 +2829,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8dedadf24afb32e4890badf3ec938ec4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 1980469100}
   foodPrefabs:
   - {fileID: 157882, guid: 188f5ca70e06aa54aa553acab524a9c2, type: 3}
   - {fileID: 172578, guid: 99cfbd9cdead68e45b3b51cc712e775c, type: 3}
   - {fileID: 125410, guid: 3abd63f3e53e3d44997bfd19defb70d5, type: 3}
   - {fileID: 125410, guid: 6b6f60460a5905c4a8ee3e65cdb9d5c8, type: 3}
-  player: {fileID: 1980469100}
 --- !u!1 &963194225
 GameObject:
   m_ObjectHideFlags: 0
@@ -6605,6 +6605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 613d316573f91954187c7429003bdfe0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swerveSpeed: 0.5
+  maxSwerveAmount: 0.8
   playerXincreaseRatio: 0.003
   playerYincreaseRatio: 0.003
   playerZincreaseRatio: 0.003
@@ -6612,8 +6614,6 @@ MonoBehaviour:
   totalFoodEaten: 0
   totalCarHitted: 0
   eatingSound: {fileID: 1980469109}
-  swerveSpeed: 0.5
-  maxSwerveAmount: 0.8
 --- !u!95 &1980469105
 Animator:
   serializedVersion: 3
@@ -6657,11 +6657,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56dd47b8694438c4fb32249518b3a849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  zPosMin: -4.68
-  zPosMax: 14.9
-  playerController: {fileID: 0}
   Speed: 3
   ArrowImage: {fileID: 2109034625}
+  playerController: {fileID: 0}
+  zPosMin: -4.68
+  zPosMax: 14.9
 --- !u!82 &1980469108
 AudioSource:
   m_ObjectHideFlags: 0
