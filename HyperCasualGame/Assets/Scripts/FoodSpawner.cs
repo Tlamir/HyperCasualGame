@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class FoodSpawner : MonoBehaviour
 {
-    public GameObject[] foodPrefabs;
-    float foodSpawnLocationsTopRight = 5.0f;
-    float foodSpawnLocationsTopLeft = -5.4f;
-
     [SerializeField] GameObject player;
 
+    public GameObject[] foodPrefabs;
+
+    float foodSpawnLocationsTopRight = 5.0f;
+    float foodSpawnLocationsTopLeft = -5.4f;
     float foodSpawnLocationsBottomRight = 3.0f;
     float foodSpawnLocationsBottomLeft = -3.0f;
 
@@ -32,7 +32,6 @@ public class FoodSpawner : MonoBehaviour
         int foodIndex = Random.Range(0, foodPrefabs.Length);
         Instantiate(foodPrefabs[foodIndex], spawnPos, foodPrefabs[foodIndex].transform.rotation);
     }
-
     public void SpawnRandomFood()
     {
         if (player.transform.position.z > 12)
