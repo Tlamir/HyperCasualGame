@@ -5,25 +5,20 @@ using UnityEngine.UI;
 
 public class SwerveInputSystem : MonoBehaviour
 {
-    private float _lastFrameFingerPositionX;
-    private float _moveFactorX;
-
-    
-    public float MoveFactorX => _moveFactorX;
-    public float zPosMin = -4.68f, zPosMax = 14.9f;
-    public PlayerController playerController;
-    animationStateController animationStateController;
-    
-
     [SerializeField] private float Speed = 2.0f; //Player Speed
     public RawImage ArrowImage;
+    public PlayerController playerController;
+    animationStateController animationStateController;
 
+    private float _lastFrameFingerPositionX;
+    private float _moveFactorX;
+    public float MoveFactorX => _moveFactorX;
+    public float zPosMin = -4.68f, zPosMax = 14.9f;
     private void Start()
     {
         animationStateController = GameObject.FindGameObjectWithTag("Player").GetComponent<animationStateController>();
         playerController = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
     }
-
     private void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -46,7 +41,6 @@ public class SwerveInputSystem : MonoBehaviour
             animationStateController.notwWalking();
         }
     }
-
     public void MovePlayer()
     {
         if (!playerController.isLevelFinished)

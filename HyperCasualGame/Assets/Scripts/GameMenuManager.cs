@@ -15,7 +15,6 @@ public class GameMenuManager : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
     }
-
     public void NextLevel()
     {
         try

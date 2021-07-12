@@ -4,40 +4,32 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField]
+    private float swerveSpeed = 0.5f;
+    [SerializeField]
+    private float maxSwerveAmount = 1f;
     //X Y Z values to manuplate player size 
     public float playerXincreaseRatio = 0.30f;
     public float playerYincreaseRatio = 0.001f;
     public float playerZincreaseRatio = 0.30f;
-    
+   
     public bool isLevelFinished = false;
     public int totalFoodEaten=0, totalCarHitted=0;
     public AudioSource eatingSound;
 
-
     private float minX = -5.0f, maxX = 5.0f;
     private int inverseControls = 1;//1 not rotated -1 is rotated
     private SwerveInputSystem _swerveInputSystem;
-    [SerializeField] 
-    private float swerveSpeed = 0.5f;
-    [SerializeField] 
-    private float maxSwerveAmount = 1f;
-    
-    
-
-
-
+   
     Vector3 newVector;
     FoodSpawner foodSpawner;
     ProgressBar progressBar;
-
     void Start()
     {
         foodSpawner = GameObject.FindGameObjectWithTag("FoodSpawner").GetComponent<FoodSpawner>();
         progressBar = GameObject.FindGameObjectWithTag("ProgressBar").GetComponent<ProgressBar>();
         _swerveInputSystem = GetComponent<SwerveInputSystem>();
-
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -51,9 +43,6 @@ public class PlayerController : MonoBehaviour
             transform.position = new Vector3(xPos, transform.position.y, transform.position.z);
         }
     }
-
-
-
     private void OnCollisionEnter(Collision other)
     {
         if (other.gameObject.tag == "Car")
@@ -62,10 +51,8 @@ public class PlayerController : MonoBehaviour
             //If the player get hit by deer
             //Decrase Size
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio, false);
-
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Food"))
@@ -83,9 +70,7 @@ public class PlayerController : MonoBehaviour
             foodSpawner.SpawnRandomFood();
             Destroy(other.gameObject);
         }
-        
     }
-
     public void ChangePlayerSize(float x,float y ,float z,bool IsItIncrease)
     {
         if (IsItIncrease)//Increase Player size
