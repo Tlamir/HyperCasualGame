@@ -6403,6 +6403,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Hyper-casual Charcter
       objectReference: {fileID: 0}
+    - target: {fileID: 7577332534090343394, guid: cd491e44f33f7dd4eb593c7cd5c0b22a, type: 3}
+      propertyPath: m_IsTrigger
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7577332534090343422, guid: cd491e44f33f7dd4eb593c7cd5c0b22a, type: 3}
       propertyPath: ArrowImage
       value: 

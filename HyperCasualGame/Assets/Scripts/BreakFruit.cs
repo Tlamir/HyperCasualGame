@@ -9,7 +9,7 @@ public class BreakFruit : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Run();
+           // Run();
         }
     }
     public void Run()

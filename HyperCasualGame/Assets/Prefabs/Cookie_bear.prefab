@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 438406}
   - component: {fileID: 3357280}
   - component: {fileID: 2328444}
-  - component: {fileID: 6461570}
   - component: {fileID: 11414740}
   - component: {fileID: -6750094353597331511}
+  - component: {fileID: -7695389478409696445}
   m_Layer: 0
   m_Name: Cookie_bear
   m_TagString: Food
@@ -85,20 +85,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &6461570
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 157882}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300010, guid: 17733f756739eee4693ad950d38db6e3, type: 3}
 --- !u!114 &11414740
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -112,7 +98,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   parts: {fileID: 493604, guid: 4423d5c82d540d045831fed163accd16, type: 3}
-  audio: {fileID: -6750094353597331511}
 --- !u!82 &-6750094353597331511
 AudioSource:
   m_ObjectHideFlags: 0
@@ -209,3 +194,16 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!65 &-7695389478409696445
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 157882}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.33194548, y: 0.052608684, z: 0.42578274}
+  m_Center: {x: 0.000030577183, y: 0, z: -0.0041550547}
