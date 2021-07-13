@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     public AudioSource eatingSound;
 
     private float minX = -5.0f, maxX = 5.0f;
-    private int inverseControls = 1;//1 not rotated -1 is rotated
+    private int inverseControls = 1;    //1 not rotated -1 is rotated
     private SwerveInputSystem _swerveInputSystem;
    
     Vector3 newVector;
@@ -62,7 +62,6 @@ public class PlayerController : MonoBehaviour
             //Increase progress and rotate player
             progressBar.IncrementProgress();
             //swap movment
-            inverseControls *= -1;
             totalFoodEaten++;
             //Increase player size here
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);
@@ -74,22 +73,21 @@ public class PlayerController : MonoBehaviour
     }
     public void ChangePlayerSize(float x,float y ,float z,bool IsItIncrease)
     {
-        if (IsItIncrease)//Increase Player size
+        if (IsItIncrease)   //Increase Player size
         {
             newVector = new Vector3(gameObject.transform.localScale.x + playerXincreaseRatio, gameObject.transform.localScale.y + playerYincreaseRatio, gameObject.transform.localScale.z + playerZincreaseRatio);
             gameObject.transform.localScale = newVector;
         }
-        else//Decrase Player size
+        else    //Decrase Player size
         {
             newVector = new Vector3(gameObject.transform.localScale.x - playerXincreaseRatio, gameObject.transform.localScale.y - playerYincreaseRatio, gameObject.transform.localScale.z - playerZincreaseRatio);
             gameObject.transform.localScale = newVector;
-        }
-        
+        } 
     }
-
     IEnumerator Rotate()
     {
         yield return new WaitForSeconds(0.5f);
         gameObject.transform.Rotate(0, 180, 0);
+        inverseControls *= -1;
     }
 }
