@@ -61,7 +61,6 @@ public class PlayerController : MonoBehaviour
             eatingSound.Play();
             //Increase progress and rotate player
             progressBar.IncrementProgress();
-            gameObject.transform.Rotate(0,180,0);
             //swap movment
             inverseControls *= -1;
             totalFoodEaten++;
@@ -69,6 +68,8 @@ public class PlayerController : MonoBehaviour
             ChangePlayerSize(playerZincreaseRatio, playerYincreaseRatio, playerYincreaseRatio,true);
             foodSpawner.SpawnRandomFood();
             Destroy(other.gameObject);
+            StartCoroutine(Rotate());
+
         }
     }
     public void ChangePlayerSize(float x,float y ,float z,bool IsItIncrease)
@@ -84,5 +85,11 @@ public class PlayerController : MonoBehaviour
             gameObject.transform.localScale = newVector;
         }
         
+    }
+
+    IEnumerator Rotate()
+    {
+        yield return new WaitForSeconds(0.5f);
+        gameObject.transform.Rotate(0, 180, 0);
     }
 }
